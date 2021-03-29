@@ -20,12 +20,12 @@ public class Instructions extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startGame();
+                startGame(view);
             }
         });
     }
 
-    void startGame(){
+    public void startGame(View view){
         Intent intent = new Intent(this, Game.class);
         startActivity(intent);
     }
