@@ -16,15 +16,18 @@ public class Game extends AppCompatActivity {
     private TextView knowText;
     private TextView sleepText;
     private TextView dayText;
+    private TextView gradeText;
+    private TextView nextText;
     private int happy;
     private int hunger;
     private int know;
     private int sleep;
     private int day;
-
+    private int score = 0;
+    private int interval = 25;
     private CountDownTimer countDownTimer;
-    private long timeLeft = 50 * 60 * 24 * 90;
-    private long timeLapsed = 50 * 60 * 24 * 90 - timeLeft;
+    private long timeLeft = interval * 60 * 24 * 90;
+    private long timeLapsed = interval * 60 * 24 * 90 - timeLeft;
     private int hour = 12;
     private int minute = 0;
     private boolean am = true;
@@ -45,6 +48,8 @@ public class Game extends AppCompatActivity {
         knowText = findViewById(R.id.Knowledge);
         sleepText = findViewById(R.id.Sleep);
         dayText = findViewById(R.id.Day);
+        gradeText = findViewById(R.id.Grades);
+        nextText = findViewById(R.id.NextExam);
         happy = 80;
         hunger = 80;
         know = 80;
@@ -55,7 +60,7 @@ public class Game extends AppCompatActivity {
 
 
     public void startTimer(){
-        countDownTimer = new CountDownTimer(timeLeft, 50) {
+        countDownTimer = new CountDownTimer(timeLeft, interval) {
             @Override
             public void onTick(long l) {
                 timeLeft = l;
@@ -77,6 +82,19 @@ public class Game extends AppCompatActivity {
                             }
                         }
                         hour++;
+                        if(am == false && hour==2 && minute==00 && day % 2 == 0){
+                            int temp = (happy + hunger + sleep + know) / 4;
+                            String s = Integer.toString(temp);
+
+                            gradeText.setText(gradeText.getText() + s + ", ");
+                            if(day == 10){
+                                nextText.setText("EXAMS DONE");
+                            }else {
+                                s = Integer.toString(day + 2);
+                                nextText.setText("Next Exam: Day " + s +" , 2:00 PM");
+                            }
+                            score += temp;
+                        }
                     }else{
                         hour = 1;
                     }

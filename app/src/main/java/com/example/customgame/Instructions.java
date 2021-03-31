@@ -14,19 +14,20 @@ public class Instructions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_instructions);
         start = findViewById(R.id.button);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                startGame(view);
+                startGame();
             }
         });
     }
 
-    public void startGame(View view){
+    public void startGame(){
         Intent intent = new Intent(this, Game.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 }

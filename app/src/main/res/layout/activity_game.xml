@@ -59,6 +59,19 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <TextView
+        android:id="@+id/Grades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grades: "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.158" />
+
+    <TextView
         android:id="@+id/TimeCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,6 +96,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.049" />
+
+    <TextView
+        android:id="@+id/NextExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Exam: Day 2, 2:00 PM"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.192" />
 
     <Button
         android:id="@+id/sleepButton"
