@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Game extends AppCompatActivity {
@@ -18,6 +19,7 @@ public class Game extends AppCompatActivity {
     private TextView dayText;
     private TextView gradeText;
     private TextView nextText;
+    private ImageView gameImage;
     private int happy;
     private int hunger;
     private int know;
@@ -50,6 +52,7 @@ public class Game extends AppCompatActivity {
         dayText = findViewById(R.id.Day);
         gradeText = findViewById(R.id.Grades);
         nextText = findViewById(R.id.NextExam);
+        gameImage = findViewById(R.id.gameImg);
         happy = 80;
         hunger = 80;
         know = 80;
@@ -65,6 +68,33 @@ public class Game extends AppCompatActivity {
             public void onTick(long l) {
                 timeLeft = l;
                 updateTimer();
+                if(minute % 30 == 0){
+                    if(sleeping == true){
+                        if(minute == 30){
+                            gameImage.setImageResource(R.drawable.bed1);
+                        }else{
+                            gameImage.setImageResource(R.drawable.bed2);
+                        }
+                    }else if(eating == true){
+                        if(minute == 30){
+                            gameImage.setImageResource(R.drawable.eat1);
+                        }else{
+                            gameImage.setImageResource(R.drawable.eat2);
+                        }
+                    }else if(studying == true){
+                        if(minute == 30){
+                            gameImage.setImageResource(R.drawable.study1);
+                        }else{
+                            gameImage.setImageResource(R.drawable.study2);
+                        }
+                    }else if(playing == true){
+                        if(minute == 30){
+                            gameImage.setImageResource(R.drawable.relax1);
+                        }else{
+                            gameImage.setImageResource(R.drawable.relax2);
+                        }
+                    }
+                }
                 if(minute < 59) {
                     minute++;
                 }else{
@@ -87,6 +117,7 @@ public class Game extends AppCompatActivity {
                             String s = Integer.toString(temp);
 
                             gradeText.setText(gradeText.getText() + s + ", ");
+                            score += temp;
                             if(day == 10){
                                 nextText.setText("EXAMS DONE");
                             }else {
@@ -153,6 +184,7 @@ public class Game extends AppCompatActivity {
         eating = false;
         studying = false;
         playing = false;
+        gameImage.setImageResource(R.drawable.bed1);
     }
 
     public void eat(View view){
@@ -160,6 +192,7 @@ public class Game extends AppCompatActivity {
         eating = true;
         studying = false;
         playing = false;
+        gameImage.setImageResource(R.drawable.eat1);
     }
 
     public void study(View view){
@@ -167,6 +200,7 @@ public class Game extends AppCompatActivity {
         eating = false;
         studying = true;
         playing = false;
+        gameImage.setImageResource(R.drawable.study1);
     }
 
     public void relax(View view){
@@ -174,5 +208,6 @@ public class Game extends AppCompatActivity {
         eating = false;
         studying = false;
         playing = true;
+        gameImage.setImageResource(R.drawable.relax1);
     }
 };
