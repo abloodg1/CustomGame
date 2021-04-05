@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,8 +26,8 @@ public class Game extends AppCompatActivity {
     private int know;
     private int sleep;
     private int day;
-    private int score = 0;
-    private int interval = 25;
+    public int score = 0;
+    private int interval = 1;
     private CountDownTimer countDownTimer;
     private long timeLeft = interval * 60 * 24 * 90;
     private long timeLapsed = interval * 60 * 24 * 90 - timeLeft;
@@ -38,7 +39,7 @@ public class Game extends AppCompatActivity {
     private boolean eating = false;
     private boolean studying = false;
     private boolean playing = false;
-
+    Button buttonEnd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +54,14 @@ public class Game extends AppCompatActivity {
         gradeText = findViewById(R.id.Grades);
         nextText = findViewById(R.id.NextExam);
         gameImage = findViewById(R.id.gameImg);
+        buttonEnd = findViewById(R.id.endButton);
         happy = 80;
         hunger = 80;
         know = 80;
         sleep = 80;
         day = 1;
         startTimer();
+
     }
 
 
@@ -209,5 +212,11 @@ public class Game extends AppCompatActivity {
         studying = false;
         playing = true;
         gameImage.setImageResource(R.drawable.relax1);
+    }
+
+    public void endGame(View view){
+        Intent intent = new Intent(this, EndScreen.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 };

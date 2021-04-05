@@ -8,59 +8,63 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="385dp"
-        android:layout_height="124dp"
+        android:layout_width="382dp"
+        android:layout_height="146dp"
+        android:fontFamily="casual"
         android:text="The year is 2020, students around the globe are forced to take classes online.
 At first, it never seemed to be an issue, but with quarantine, and not being able to live a normal
 life, students soon found themselves in a never ending loop."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115" />
+        app:layout_constraintVertical_bias="0.088" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="380dp"
-        android:layout_height="192dp"
+        android:layout_width="377dp"
+        android:layout_height="167dp"
+        android:fontFamily="casual"
         android:text="This game is meant to mimic the monotony of always being stuck inside, and repeating every day over and over again. Your goal is to succeed in school, keep yourself healthy, happy, and sane, over a 90 day period."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintHorizontal_bias="0.264"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374" />
+        app:layout_constraintVertical_bias="0.351" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="376dp"
         android:layout_height="269dp"
+        android:fontFamily="casual"
         android:text="There are 4 stats that you need to balance. Sleep, Knowledge, Hunger, and Happiness. These stats will all go down as time goes on but it is your job to do different actions to keep them up. Sleeping will obviously improve your sleep, eating will help your hunger, studying will boost your knowledge, and doing hobbies will boost your happiness. Every 10 days,
 there will be an exam at 2 PM, and your score depends on your stats. When you are ready, press start."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintHorizontal_bias="0.257"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.692" />
+        app:layout_constraintVertical_bias="0.748" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="147dp"
         android:layout_height="67dp"
+        android:fontFamily="casual"
+        android:onClick="startGame"
         android:text="Start"
         android:textSize="24sp"
-        android:onClick="startGame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.887" />
+        app:layout_constraintVertical_bias="0.936" />
 </androidx.constraintlayout.widget.ConstraintLayout>
