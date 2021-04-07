@@ -29,8 +29,8 @@ public class Game extends AppCompatActivity {
     public int score = 0;
     private int interval = 1;
     private CountDownTimer countDownTimer;
-    private long timeLeft = interval * 60 * 24 * 90;
-    private long timeLapsed = interval * 60 * 24 * 90 - timeLeft;
+    private long timeLeft = interval * 60 * 24 * 900;
+    private long timeLapsed = interval * 60 * 24 * 900 - timeLeft;
     private int hour = 12;
     private int minute = 0;
     private boolean am = true;
@@ -61,6 +61,13 @@ public class Game extends AppCompatActivity {
         sleep = 80;
         day = 1;
         startTimer();
+        buttonEnd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                endGame();
+            }
+        });
 
     }
 
@@ -110,6 +117,9 @@ public class Game extends AppCompatActivity {
                             }else{
                                 am = true;
                                 AM = " AM";
+                                if(day == 10){
+                                    endGame();
+                                }
                                 day++;
                                 dayText.setText("Day "+ day);
                             }
@@ -139,10 +149,10 @@ public class Game extends AppCompatActivity {
                     timerText.setText(hour + ":" + minute + AM);
                 }
                 if (minute == 0){
-                    hunger = updateStat(hunger, 5, 10,15, eating);
-                    happy = updateStat(happy, 5, 5,15, playing);
-                    know = updateStat(know, 5, 10,10, studying);
-                    sleep = updateStat(sleep, 5,20,5, sleeping);
+                    hunger = updateStat(hunger, 5, 20,30, eating);
+                    happy = updateStat(happy, 5, 20,25, playing);
+                    know = updateStat(know, 5, 20,20, studying);
+                    sleep = updateStat(sleep, 5,25,15, sleeping);
                 }
                 happiText.setText("Happiness: " + happy);
                 hungerText.setText("Hunger: " + hunger);
@@ -214,7 +224,8 @@ public class Game extends AppCompatActivity {
         gameImage.setImageResource(R.drawable.relax1);
     }
 
-    public void endGame(View view){
+    public void endGame(){
+        EndScreen.score = score;
         Intent intent = new Intent(this, EndScreen.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);

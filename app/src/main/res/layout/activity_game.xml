@@ -183,7 +183,6 @@
         android:layout_width="96dp"
         android:layout_height="45dp"
         android:fontFamily="casual"
-        android:onClick="endGame"
         android:text="End Game"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"

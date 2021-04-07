@@ -59,7 +59,7 @@ there will be an exam at 2 PM, and your score depends on your stats. When you ar
         android:layout_width="147dp"
         android:layout_height="67dp"
         android:fontFamily="casual"
-        android:onClick="startGame"
+
         android:text="Start"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

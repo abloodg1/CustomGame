@@ -12,14 +12,14 @@ public class EndScreen extends AppCompatActivity {
 
     TextView scoreText;
     Button again;
-    public int score;
+    public static int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_screen);
-        scoreText = findViewById(R.id.score);
-        scoreText.setText(score);
+        scoreText = findViewById(R.id.scoreText);
+        scoreText.setText("" + score);
         again = findViewById(R.id.button);
         again.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +28,8 @@ public class EndScreen extends AppCompatActivity {
                 playAgain();
             }
         });
+
+
     }
 
     public void playAgain(){
